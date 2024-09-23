@@ -18,12 +18,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
+from django.core.management.utils import get_random_secret_key
+SECRET_KEY = get_random_secret_key()
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-!nssgzwwi@*=^p)x%n2&i3!ilo_m-1638qqy0sl6zdv%d3_)-q'
+#SECRET_KEY = 'django-insecure-!nssgzwwi@*=^p)x%n2&i3!ilo_m-1638qqy0sl6zdv%d3_)-q'
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['web-production-04af.up.railway.app','newtodotask-production.up.railway.app', '127.0.0.1']
 
@@ -133,3 +137,8 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+SECURE_HSTS_SECONDS = 31536000
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # Optional, to include subdomains
+SECURE_HSTS_PRELOAD = True  # Optional, for preloading into browsers
+SECURE_SSL_REDIRECT = True
