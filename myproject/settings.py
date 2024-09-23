@@ -29,7 +29,7 @@ CSRF_COOKIE_SECURE = True
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['web-production-04af.up.railway.app','newtodotask-production.up.railway.app', '127.0.0.1']
+ALLOWED_HOSTS = ['newtodotask-production.up.railway.app']
 
 
 # Application definition
